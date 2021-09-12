@@ -13,7 +13,7 @@ def get_page():
 	global url
 	
 	# Code here - Ask the user to input "Enter url of a medium article: " and collect it in url
-	url = input("Enter url of a medium article: ")
+	url = input('Enter url of a medium article: ')
 	# Code ends here
 	
 	# handling possible error
@@ -22,7 +22,7 @@ def get_page():
 		sys.exit(1)
 
 	# Code here - Call get method in requests object, pass url and collect it in res
-	res = requests.get(url)
+	res=requests.get(url)
 	# Code ends here
 
 	res.raise_for_status()
@@ -56,8 +56,8 @@ def save_file(text):
 	fname = f'scraped_articles/{name}.txt'
 	
 	# Code here - write a file using with (2 lines)
-	with open(fname, "w") as f:
-		f.write(text)
+	f = open(fname, "w")
+	f.write(text)
 	# Code ends here
 
 	print(f'File saved in directory {fname}')
